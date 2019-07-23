@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>API test</title>
+    </head>
+    <body>
+        <ul>
+        </ul>
+        <script>
+            // const loadData = async() => {
+            //     const response = await fetch('https://acme-users-api-rev.herokuapp.com/api/products');
+            //     const data = await response.json();
+            //     const html = data.map(product => `<li>${product.name}</li>`).join('');
+            //     const containter = document.querySelector('ul');
+            //     containter.innerHTML = html;
+            //     console.log(data);
+            // }
+            // loadData();
+            fetch('https://acme-users-api-rev.herokuapp.com/api/products')
+                .then( response => response.json()
+                .then(data => {
+                    const containter = document.querySelector('ul');
+                    const html = data.map(product => `<a href='#${product.id}'>${product.name}</a>`).join('');
+                    containter.innerHTML = html;
+                }))
+        </script>
+    </body>
+</html>
