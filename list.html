@@ -1,0 +1,36 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <div id="list">
+
+        </div>
+        <button>
+            remove
+        </button>
+        <script>
+            const arr =["First", "Second", "Third", "Fourth", "Five"];
+            const list = document.querySelector('#list');
+            const remove = document.querySelector('button');
+
+            const render = () => {
+                const html = arr.map(ele => `<li>${ele}</li>`).join('');
+                list.innerHTML = html;
+            };
+            remove.onclick = function (){
+                arr.pop();
+                render();
+            }
+
+
+            // remove.addEventListener('click', (ev)=>{
+            //     arr.pop();
+            //     render();
+            // })
+
+
+            render();
+        </script>
+    </body>
+
+</html>
